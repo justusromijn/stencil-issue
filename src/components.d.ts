@@ -37,9 +37,7 @@ declare global {
 }
 
 declare namespace LocalJSX {
-  interface ChildComponent {
-    'onInputStateChanged'?: (event: CustomEvent<any>) => void;
-  }
+  interface ChildComponent {}
   interface ParentComponent {
     'event'?: boolean;
   }

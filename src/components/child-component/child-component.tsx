@@ -1,4 +1,4 @@
-import { Component, h, Event, EventEmitter } from '@stencil/core';
+import { Component, h } from '@stencil/core';
 
 @Component({
   tag: 'child-component',
@@ -7,19 +7,10 @@ import { Component, h, Event, EventEmitter } from '@stencil/core';
 })
 export class ChildComponent {
 
-  @Event() private inputStateChanged: EventEmitter;
-
-  componentDidLoad(): void {
-    this.inputStateChanged.emit({connected: true})
-  }
-
-  componentDidUnload(): void {
-    console.log('child component did unload');
-    this.inputStateChanged.emit({connected: true});
-  }
 
   render() {
     return <div class='child-component'>
+      <slot />
       I'm the child component
     </div>;
   }
